@@ -1,6 +1,14 @@
 # vue-toolset-template
 
-## Project setup
+### Based on @vue/cli 4.4.4 with:
+
+- babel
+- router (history mode)
+- vuex
+- eslint + standard (lint on save, lint and fix on commit)
+- scss (dart-sass)
+
+### Project setup
 ```
 yarn install
 ```
