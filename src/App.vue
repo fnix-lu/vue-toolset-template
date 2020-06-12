@@ -5,6 +5,9 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <div>
+      <svg-icon icon-class="404"/>
+    </div>
   </div>
 </template>
 
