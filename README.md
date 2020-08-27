@@ -70,6 +70,7 @@ module.exports = {
 Add ```SvgIcon``` component and register globally
 ```
 // src/components/SvgIcon/index.vue
+
 <template>
   <div
     v-if="isExternal"
@@ -138,6 +139,7 @@ export default {
 
 ```
 // src/utils/validate.js
+
 /**
  * @param {string} path
  * @returns {Boolean}
@@ -149,6 +151,7 @@ export function isExternal (path) {
 
 ```
 // src/icons/index.js
+
 import Vue from 'vue'
 import SvgIcon from '@/components/SvgIcon' // svg component
 
@@ -162,6 +165,7 @@ requireAll(req)
 
 ```
 // src/main.js
+
 import router from './router'
 import store from './store'
 
