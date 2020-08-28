@@ -5,6 +5,21 @@ function resolve (dir) {
 }
 
 module.exports = {
+  lintOnSave: 'warning', // boolean (true = 'warning') | 'warning' | 'default' (= 'error') | 'error'
+
+  devServer: {
+    proxy: {
+      // change `xxx-api/login` to `domain/login`
+      [process.env.VUE_APP_BASE_API]: {
+        target: 'https://www.easy-mock.com/mock/5f48c7e49279d93141e87028',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: ''
+        }
+      }
+    }
+  },
+
   chainWebpack (config) {
     // set svg-sprite-loader
     config.module
