@@ -20,6 +20,14 @@ module.exports = {
     }
   },
 
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: '@import \'@/styles/variables.scss\';'
+      }
+    }
+  },
+
   chainWebpack (config) {
     // set svg-sprite-loader
     config.module

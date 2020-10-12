@@ -32,6 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-  // color: $color-primary;
+  color: $color-primary;
 }
 </style>
