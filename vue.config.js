@@ -8,6 +8,7 @@ module.exports = {
   lintOnSave: 'warning', // boolean (true = 'warning') | 'warning' | 'default' (= 'error') | 'error'
 
   devServer: {
+    port: 8008,
     proxy: {
       // change `xxx-api/login` to `domain/login`
       [process.env.VUE_APP_BASE_API]: {
