@@ -20,10 +20,10 @@ const routes = [
   }
 ]
 
-const router = new VueRouter({
+const createRouter = () => new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
 
-export default router
+export default createRouter

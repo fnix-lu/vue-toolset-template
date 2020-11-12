@@ -5,7 +5,10 @@ function resolve (dir) {
 }
 
 module.exports = {
-  lintOnSave: 'warning', // boolean (true = 'warning') | 'warning' | 'default' (= 'error') | 'error'
+  lintOnSave: false, // boolean (true = 'warning') | 'warning' | 'default' (= 'error') | 'error'
+
+  publicPath: '/source',
+  outputDir: `dist/${process.env.SIDE}`,
 
   devServer: {
     port: 8008,
@@ -27,6 +30,12 @@ module.exports = {
         prependData: '@import \'@/styles/variables.scss\';'
       }
     }
+  },
+
+  configureWebpack: {
+    // base webpack config
+
+    ...require(resolve(`config/webpack.${process.env.SIDE || 'client'}.config.js`))
   },
 
   chainWebpack (config) {

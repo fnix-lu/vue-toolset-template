@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     // 0 = off, 1 = warn, 2 = error
     'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 1 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 1 : 0,
+    'prefer-promise-reject-errors': 1
   }
 }

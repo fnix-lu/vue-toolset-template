@@ -5,17 +5,23 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:client": "cross-env SIDE=client vue-cli-service build",
+    "build:server": "cross-env SIDE=server vue-cli-service build --mode server",
+    "start": "yarn build:client && yarn build:server && node server.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
     "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vue-server-renderer": "2.6.11",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "vuex-router-sync": "^5.0.0",
+    "webpack-node-externals": "^2.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
