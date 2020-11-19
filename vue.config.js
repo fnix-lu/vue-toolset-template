@@ -5,7 +5,8 @@ function resolve (dir) {
 }
 
 module.exports = {
-  lintOnSave: 'warning', // boolean (true = 'warning') | 'warning' | 'default' (= 'error') | 'error'
+  lintOnSave: false, // boolean (true = 'warning') | 'warning' | 'default' (= 'error') | 'error'
+  productionSourceMap: process.env.NODE_ENV === 'development',
 
   devServer: {
     proxy: {
