@@ -10,6 +10,12 @@
       <li>{{ '2020-10-12 9:00' | beforeNow }}</li>
       <li>{{ '2020-10-9' | beforeNow }}</li>
     </ul>
+    <input
+      type="text"
+      v-for="(c, i) in chars"
+      :key="i"
+      v-model="chars[i]"
+    >
   </div>
 </template>
 
@@ -19,7 +25,13 @@ import { getTodoList } from '@/api/todo'
 export default {
   data () {
     return {
-      todoList: []
+      todoList: [],
+      chars: new Array(4)
+    }
+  },
+  watch: {
+    chars (val) {
+      console.log(val)
     }
   },
   created () {
