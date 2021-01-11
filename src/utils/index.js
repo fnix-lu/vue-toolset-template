@@ -3,7 +3,7 @@
  * @param {function} fn 需要防抖的函数定义
  * @param {number} delay 需要延迟的毫秒数 default = 500
  */
-export function debounce (fn, delay = 500) {
+export function debounce(fn, delay = 500) {
   let timer
 
   return function () {
@@ -23,7 +23,7 @@ export function debounce (fn, delay = 500) {
  * @param {function} fn 需要节流的函数定义
  * @param {number} delay 需要间隔的毫秒数 default = 500
  */
-export function throttle (fn, delay = 500) {
+export function throttle(fn, delay = 500) {
   let timer
   let lastTime = Date.now()
 
@@ -49,7 +49,7 @@ export function throttle (fn, delay = 500) {
  * @param {number} n 需要格式化的数值
  * @param {number} length 需要格式化成的位数 default = 2
  */
-export function formatNumber (n, length = 2) {
+export function formatNumber(n, length = 2) {
   n = n.toString()
   if (n.length < length) {
     return '0'.repeat(length - n.length) + n
@@ -61,7 +61,7 @@ export function formatNumber (n, length = 2) {
  * 将过去的日期格式化为距离现在的相对时间，超过 1 天显示具体的 月-日
  * @param {*} dateTime 可被 new Date() 处理的日期
  */
-export function beforeNow (dateTime) {
+export function beforeNow(dateTime) {
   const now = new Date()
   const target = new Date(dateTime)
 

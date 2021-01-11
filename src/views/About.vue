@@ -23,18 +23,18 @@
 import { getTodoList } from '@/api/todo'
 
 export default {
-  data () {
+  data() {
     return {
       todoList: [],
       chars: new Array(4)
     }
   },
   watch: {
-    chars (val) {
+    chars(val) {
       console.log(val)
     }
   },
-  created () {
+  created() {
     getTodoList().then(res => {
       this.todoList = res.data
     })

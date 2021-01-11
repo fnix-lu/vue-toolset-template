@@ -1,6 +1,6 @@
 const path = require('path')
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
@@ -29,7 +29,7 @@ module.exports = {
     }
   },
 
-  chainWebpack (config) {
+  chainWebpack(config) {
     // set svg-sprite-loader
     config.module
       .rule('svg')

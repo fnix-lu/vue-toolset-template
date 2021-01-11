@@ -11,7 +11,7 @@ const mutations = {
 }
 
 const actions = {
-  removeToken ({ commit }) {
+  removeToken({ commit }) {
     return new Promise(resolve => {
       commit('SET_TOKEN', '')
       removeToken()
