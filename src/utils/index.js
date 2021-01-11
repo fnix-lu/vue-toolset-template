@@ -19,6 +19,32 @@ export function debounce (fn, delay = 500) {
 }
 
 /**
+ * 节流函数
+ * @param {function} fn 需要节流的函数定义
+ * @param {number} delay 需要间隔的毫秒数 default = 500
+ */
+export function throttle (fn, delay = 500) {
+  let timer
+  let lastTime = Date.now()
+
+  return function () {
+    clearTimeout(timer)
+
+    const nowTime = Date.now()
+    let remain = delay - (nowTime - lastTime)
+    remain = remain > 0 ? remain : 0
+
+    const _this = this
+    const _arguments = arguments
+
+    timer = setTimeout(() => {
+      fn.apply(_this, _arguments)
+      lastTime = nowTime
+    }, remain)
+  }
+}
+
+/**
  * 将数值格式化为指定的位数
  * @param {number} n 需要格式化的数值
  * @param {number} length 需要格式化成的位数 default = 2
